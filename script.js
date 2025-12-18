@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const timelineItems = document.querySelectorAll('.timeline-item');
 
     let isAnimating = false;
-    let rainInterval = null;
-
+    let timelineAnimation; // To hold the GSAP timeline instance
+ 
     // --- Raining Skills Animation Logic ---
     const canvas = document.getElementById('skills-canvas');
     const ctx = canvas.getContext('2d');
@@ -40,45 +40,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startRainingSkills() {
-        if (rainInterval) return;
-        canvas.style.opacity = '0.1';
-        rainInterval = setInterval(drawRain, 50);
+        if (gsap.ticker.isTweening(drawRain)) return;
+        gsap.to(canvas, { opacity: 0.1, duration: 0.5 });
+        gsap.ticker.add(drawRain);
     }
 
     function stopRainingSkills() {
-        clearInterval(rainInterval);
-        rainInterval = null;
-        // Fade out the canvas
-        ctx.fillStyle = 'rgba(240, 242, 245, 1)';
-        let fadeOut = setInterval(() => {
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            if (!rainInterval) {
-                clearInterval(fadeOut);
-                canvas.style.opacity = '0';
+        gsap.ticker.remove(drawRain);
+        // Fade out the canvas and clear it
+        gsap.to(canvas, {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
             }
-        }, 30);
+        });
     }
 
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        // Recalculate columns and reset drops on resize
+        const newColumns = canvas.width / font_size;
+        drops.length = 0; // Clear existing drops
+        for (let x = 0; x < newColumns; x++) {
+            drops[x] = 1;
+        }
     });
 
     // --- Timeline Animation Logic ---
     function animateTimeline() {
-        // Animate from oldest to newest
-        const reversedItems = Array.from(timelineItems).reverse();
-        reversedItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.classList.add('is-visible');
-            }, index * 400); // Stagger the animation
-        });
-    }
-
-    function resetTimeline() {
-        timelineItems.forEach(item => {
-            item.classList.remove('is-visible');
-        });
+        // Use GSAP for a smoother, staggered animation
+        const reversedItems = Array.from(timelineItems).reverse(); // Animate from oldest to newest
+        timelineAnimation = gsap.fromTo(reversedItems,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.6, stagger: 0.3, ease: 'power2.out' }
+        );
     }
 
     // --- Main Toggle Logic ---
@@ -87,16 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isAnimating) {
             animateBtn.textContent = 'Stop Animation';
-            resetTimeline(); // Clear previous state before starting
             startRainingSkills();
             animateTimeline();
         } else {
             animateBtn.textContent = 'Animate';
             stopRainingSkills();
-            resetTimeline();
+            // Immediately set the items to their initial state and kill the animation
+            if (timelineAnimation) {
+                timelineAnimation.kill();
+                gsap.set(timelineItems, { clearProps: "all" });
+            }
         }
     });
-
-    // Initially hide timeline items for animation
-    resetTimeline();
 });
