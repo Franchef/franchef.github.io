@@ -38,12 +38,20 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     animation: fadeInDown 1s ease-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .header h1 {
     margin: 0;
     font-size: 2.5rem;
     font-weight: 700;
+    transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+.header h1:hover {
+    transform: translateZ(20px);
+    text-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 .header p {
@@ -84,6 +92,7 @@ body {
 .timeline {
     position: relative;
     padding: 2rem 0;
+    perspective: 1500px; /* Add 3D perspective to the timeline */
 }
 
 .timeline::before {
@@ -160,6 +169,19 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     position: relative;
+    transform-style: preserve-3d; /* Enable 3D space */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    will-change: transform, box-shadow;
+}
+
+.timeline-item:nth-child(odd) .timeline-content:hover {
+    transform: rotateY(-5deg) rotateX(2deg) scale(1.05) translateZ(30px);
+    box-shadow: -15px 15px 30px rgba(0,0,0,0.15);
+}
+
+.timeline-item:nth-child(even) .timeline-content:hover {
+    transform: rotateY(5deg) rotateX(2deg) scale(1.05) translateZ(30px);
+    box-shadow: 15px 15px 30px rgba(0,0,0,0.15);
 }
 
 .timeline-content h3 {
@@ -211,12 +233,22 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    perspective: 1200px; /* Add perspective for skills container */
 }
 
 .skills-grid span {
     background-color: var(--card-bg-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Enhance shadow slightly */
     font-weight: 400;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    cursor: default; /* Indicate interactivity */
+}
+
+.skills-grid span:hover {
+    transform: translateY(-8px) translateZ(20px) rotateX(10deg);
+    box-shadow: 0 15px 25px rgba(0,119,181,0.2); /* Tinted shadow to match brand */
 }
