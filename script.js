@@ -85,14 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isAnimating) {
             animateBtn.textContent = 'Stop Animation';
             startRainingSkills();
+            // Reset items to hidden before animating
+            gsap.set(timelineItems, { opacity: 0, y: 30 });
             animateTimeline();
         } else {
             animateBtn.textContent = 'Animate';
             stopRainingSkills();
-            // Immediately set the items to their initial state and kill the animation
+            // Immediately set the items to their visible state and kill the animation
             if (timelineAnimation) {
                 timelineAnimation.kill();
-                gsap.set(timelineItems, { clearProps: "all" });
+                gsap.set(timelineItems, { opacity: 1, y: 0 });
             }
         }
     });
