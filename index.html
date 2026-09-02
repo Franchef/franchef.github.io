@@ -1,244 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francesco Carbone's Portfolio</title>
+    <title>Francesco Carbone | Senior Software Developer .NET</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
-    <canvas id="skills-canvas"></canvas>
-
     <div class="container">
+        <!-- Header / Profile Section -->
         <header class="header">
-            <h1>Francesco Carbone</h1>
-            <p>Senior Software Engineer | Tech Lead</p>
-            <button id="animate-btn">Animate</button>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/franchef/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/franchef" target="_blank" rel="noopener" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <span>FC</span>
+                </div>
+                <h1>Francesco Carbone</h1>
+                <p class="subtitle">Senior Software Developer .NET | Tech Lead</p>
+                <p class="bio">
+                    Senior Software Developer con oltre 15 anni di esperienza nella progettazione e nello sviluppo di architetture distribuite, microservizi, soluzioni web enterprise ed ecosistemi .NET. Specializzato in gRPC, Apache Kafka, SignalR, Blazor e modelli di autorizzazione/autenticazione avanzati.
+                </p>
+
+                <div class="contact-badges">
+                    <a href="mailto:tek.inf.carbone@gmail.com" class="badge"><i class="fas fa-envelope"></i> tek.inf.carbone@gmail.com</a>
+                    <a href="tel:+393406487764" class="badge"><i class="fas fa-phone"></i> +39 340 6487764</a>
+                    <span class="badge"><i class="fas fa-map-marker-alt"></i> Messina, Italia · Full Remote</span>
+                    <span class="badge"><i class="fas fa-language"></i> Italiano (Madrelingua) / Inglese (Fluente)</span>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/franchef/" target="_blank" rel="noopener" class="btn-social" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/franchef" target="_blank" rel="noopener" class="btn-social" title="GitHub">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="CV.pdf" target="_blank" class="cv-btn" title="Scarica CV PDF">
+                        <i class="fas fa-file-pdf"></i> Visualizza CV (PDF)
+                    </a>
+                </div>
             </div>
         </header>
 
         <main>
-            <section class="timeline">
-                <h2>Work Experience</h2>
+            <!-- Competenze Tecniche (Categorized Skills) -->
+            <section class="skills-section">
+                <h2><i class="fas fa-laptop-code"></i> Competenze Tecniche</h2>
+                <div class="skills-categories">
+                    <div class="skill-card">
+                        <h3><i class="fas fa-server"></i> Backend & .NET</h3>
+                        <div class="skill-tags">
+                            <span>C#</span>
+                            <span>.NET / .NET Core</span>
+                            <span>ASP.NET Core</span>
+                            <span>EF Core</span>
+                            <span>gRPC</span>
+                            <span>SignalR</span>
+                        </div>
+                    </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Senior Software Developer</h3>
-                        <span class="timeline-company">Amaris Consulting</span>
-                        <span class="timeline-date">Jun 2021 - Present · 5 yrs 3 mos</span>
-                        <p>Monopoli, Apulia, Italy · Full-time<br>
-                            <em>Visual Studio, Entity Framework (EF) Core and +16 skills</em>
-                        </p>
+                    <div class="skill-card">
+                        <h3><i class="fas fa-shield-alt"></i> API, Identity & Sicurezza</h3>
+                        <div class="skill-tags">
+                            <span>REST API</span>
+                            <span>OAuth 2.0</span>
+                            <span>OpenID Connect</span>
+                            <span>OpenIddict</span>
+                            <span>Autenticazione & Autorizzazione</span>
+                            <span>Policy-Based Auth</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3><i class="fas fa-desktop"></i> Frontend & UI</h3>
+                        <div class="skill-tags">
+                            <span>Blazor WebAssembly</span>
+                            <span>Blazor Server</span>
+                            <span>Tailwind CSS</span>
+                            <span>Bootstrap</span>
+                            <span>JavaScript</span>
+                            <span>KnockoutJS</span>
+                            <span>WPF</span>
+                            <span>CommunityToolkit.Mvvm</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3><i class="fas fa-database"></i> Database, Storage & Messaging</h3>
+                        <div class="skill-tags">
+                            <span>SQL Server</span>
+                            <span>Entity Framework Core</span>
+                            <span>Apache Kafka</span>
+                            <span>Protobuf</span>
+                            <span>JSON Dinamici</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3><i class="fas fa-sitemap"></i> Architettura Software & Design</h3>
+                        <div class="skill-tags">
+                            <span>Microservizi</span>
+                            <span>Decoupled Architecture</span>
+                            <span>Domain-Driven Design (DDD)</span>
+                            <span>Vertical Slice Architecture</span>
+                            <span>CQRS</span>
+                            <span>Event-Driven Architecture</span>
+                            <span>MVVM</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3><i class="fas fa-cubes"></i> DevOps & Deployment</h3>
+                        <div class="skill-tags">
+                            <span>Docker</span>
+                            <span>Docker Compose</span>
+                            <span>.NET Aspire</span>
+                            <span>Containerizzazione</span>
+                            <span>Gestione Ambienti Staging/Prod</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Senior Software Developer</h3>
-                        <span class="timeline-company">MERMEC</span>
-                        <span class="timeline-date">Jun 2021 - Aug 2026 · 5 yrs 3 mos</span>
-                        <p>Monopoli, Apulia, Italy · Full-time<br>
-                            Sviluppo di un'applicazione facente parte di un sistema diagnostico utile ad analizzare problemi relativamente a ERTMS/ETCS.<br>
-                            L'applicazione si occupa di orchestrare tramite gRPC l'hardware diagnostico per l'acquisizione, effettuare il salvataggio e il processing dei dati.<br>
-                            Tramite Kafka effettua lo streaming dai dispositivi remoti e tramite SignalR fornisce in tempo reale i dati al frontend. Gestisce scenari di acquisizione per poter operare senza la supervisione utente, tramite pianificazione.<br>
-                            L'analisi dei dati tramite soglie fornisce il rilevamento dei difetti delle reti mobile.<br>
-                            <em>Visual Studio, Entity Framework (EF) Core and +16 skills</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Senior Software Developer</h3>
-                        <span class="timeline-company">MyForecast®</span>
-                        <span class="timeline-date">Aug 2020 - Jun 2021 · 11 mos</span>
-                        <p>Catania, Sicily, Italy · Full-time<br>
-                            Sviluppo di connessioni per lo scambio dati con l'RMS MyForecast.<br>
-                            Integrazione con terze parti e costruzione di widget grafici per la visualizzazione
-                            dati.<br>
-                            Full-stack developer<br>
-                            <em>Visual Studio, JavaScript and +17 skills</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Sviluppatore di software</h3>
-                        <span class="timeline-company">HOTA srl</span>
-                        <span class="timeline-date">Jun 2018 - Aug 2020 · 2 yrs 3 mos</span>
-                        <p>Capo d’Orlando, Sicily, Italy · Full-time<br>
-                            Sviluppo di un PMS (Property Management System) per la gestione delle struttura
-                            alberghiere<br>
-                            Sviluppo di una banca dati per un Tour Operator (BedBank) per la sincronizzazione dei
-                            calendari (Disponibilita, restrizioni, prezzi) e motore di ricerca per le prenotazoini
-                            immediate.<br>
-                            <em>Visual Studio, Stored procedure and +19 skills</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Webmaster</h3>
-                        <span class="timeline-company">italian booking service</span>
-                        <span class="timeline-date">Jan 2014 - Jun 2018 · 4 yrs 6 mos</span>
-                        <p>Messina, Sicily, Italy · Full-time<br>
-                            Progettazione e sviluppo di siti Web e applicazioni Windows per la vendita di servizi
-                            tramite interfaccia web e l'implementazione di sistemi di sincronizzazione e scambio
-                            d'informazioni.<br>
-                            Nell'ultimo periodo coordinavo il team di sviluppatori sui progetti.<br>
-                            <em>Visual Studio, Stored procedure and +18 skills</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Analista Programmatore</h3>
-                        <span class="timeline-company">Sysdata Italia SpA</span>
-                        <span class="timeline-date">Dec 2012 - Dec 2013 · 1 yr 1 mo</span>
-                        <p>Bologna, Emilia-Romagna, Italy<br>
-                            Sviluppo Web e Windows con tecnologia .NET<br>
-                            <em>Visual Studio, ASP.NET and +6 skills</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Programmatore</h3>
-                        <span class="timeline-company">SCAI</span>
-                        <span class="timeline-date">Jul 2010 - Dec 2012 · 2 yrs 6 mos</span>
-                        <p>Bologna, Emilia-Romagna, Italy<br>
-                            Sviluppo applicazioni windows e web in C# e VB.NET con tecnologie Asp.NET, MVC, Silverlight,
-                            WPF e uso di html 5, javascript css e sql (gestione di database sql server 2005/2008)<br>
-                            <em>Visual Studio, ASP.NET, +6 skills</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Programmatore</h3>
-                        <span class="timeline-company">SCAI</span>
-                        <span class="timeline-date">Mar 2010 - Jul 2010 · 5 mos</span>
-                        <p>Turin, Piedmont, Italy<br>
-                            Sviluppo applicazioni Windows in VB.NET e applicazioni web in Asp.NET/C#<br>
-                            <em>Visual Studio, JavaScript, +3 skills</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Stagista</h3>
-                        <span class="timeline-company">SCAI</span>
-                        <span class="timeline-date">Oct 2009 - Mar 2010 · 6 mos</span>
-                        <p>Turin, Piedmont, Italy<br>
-                            Sviluppo software<br>
-                            <em>Visual Studio, .NET, +1 skill</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Consulente scai presso AlmavivA S.p.A.</h3>
-                        <span class="timeline-company">AlmavivA S.p.A.</span>
-                        <span class="timeline-date">Jul 2010 - Dec 2012 · 2 yrs 6 mos</span>
-                        <p>Bologna, Emilia-Romagna, Italy<br>
-                            Programmatore in ambiente .NET per applicazioni web e windows con uso di linguaggi C# e
-                            VB.NET.<br>
-                            Web: ASP.NET, MVC, Silverlight, Html 5, CSS e Javascript (jquery)<br>
-                            Windows: Winform, WPF<br>
-                            <em>Visual Studio, ASP.NET and +6 skills</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Stagista</h3>
-                        <span class="timeline-company">Evolution & technology</span>
-                        <span class="timeline-date">May 2009 - Jun 2009 · 2 mos</span>
-                        <p>Italy<br>
-                            Bug fix vs change request al software gestionale Euro09 scritto in Acucobol.<br>
-                            <em>Visual Studio, Acucobol, +1 skill</em>
-                        </p>
-                    </div>
-                </div>
-
             </section>
 
-            <section class="skills">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <span>gRPC</span>
-                    <span>Statistical Data Analysis</span>
-                    <span>Data Processing</span>
-                    <span>SignalR</span>
-                    <span>Data Streaming</span>
-                    <span>Database Relazionali</span>
-                    <span>Agile Project Management</span>
-                    <span>Project Management</span>
-                    <span>API</span>
-                    <span>.NET Core</span>
-                    <span>C#</span>
-                    <span>Visual Studio</span>
-                    <span>ASP.NET MVC</span>
-                    <span>Applicazioni Web</span>
-                    <span>Sviluppo Web</span>
-                    <span>Programmazione</span>
-                    <span>Servizi Web</span>
-                    <span>Sviluppo di software</span>
-                    <span>Web Development</span>
-                    <span>ASP.NET</span>
-                    <span>SQL Server Management Studio</span>
-                    <span>JavaScript</span>
-                    <span>jQuery</span>
-                    <span>CSS3</span>
-                    <span>HTML5</span>
-                    <span>Entity Framework</span>
-                    <span>LINQ</span>
-                    <span>SQLite</span>
-                    <span>CSS</span>
-                    <span>Server Microsoft SQL</span>
-                    <span>.NET</span>
-                    <span>Database</span>
-                    <span>XML</span>
-                    <span>WPF</span>
-                    <span>Bootstrap</span>
-                    <span>.NET Framework</span>
-                    <span>Amazon Web Services</span>
-                    <span>Microsoft Windows</span>
-                    <span>AJAX</span>
-                    <span>KnockoutJS</span>
-                    <span>MVC</span>
-                    <span>Stored procedure</span>
-                    <span>Entity Framework Code First</span>
-                    <span>Design Pattern</span>
-                    <span>Model–view–controller (MVC)</span>
-                    <span>Sviluppo di applicazioni</span>
-                    <span>Git</span>
-                    <span>JSON</span>
-                    <span>T-SQL</span>
+            <!-- Esperienza Lavorativa (Timeline) -->
+            <section class="timeline-section">
+                <h2><i class="fas fa-briefcase"></i> Esperienze Professionali</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Senior Software Developer</h3>
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2021 - 2026</span>
+                            </div>
+                            <span class="timeline-company"><i class="fas fa-building"></i> Amaris Consulting per MERMEC Group</span>
+                            <span class="timeline-location"><i class="fas fa-globe"></i> Full Remote</span>
+                            <ul class="experience-details">
+                                <li>Sviluppo di un'applicazione software nell'ambito di un sistema di diagnostica ferroviaria per l'analisi di problematiche relative a ERTMS/ETCS.</li>
+                                <li>Sviluppo del sistema di orchestrazione dell'hardware diagnostico tramite gRPC, con gestione dell'acquisizione, salvataggio e processing dei dati.</li>
+                                <li>Implementazione dello streaming dei dati provenienti dai dispositivi remoti tramite Apache Kafka e trasmissione in tempo reale verso il frontend tramite SignalR.</li>
+                                <li>Sviluppo di scenari di acquisizione automatizzati e pianificati, consentendo l'esecuzione delle operazioni senza supervisione utente.</li>
+                                <li>Implementazione di sistemi di analisi basati su soglie per il rilevamento di difetti nelle reti mobili.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Senior Software Developer</h3>
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2020 - 2021</span>
+                            </div>
+                            <span class="timeline-company"><i class="fas fa-building"></i> MyForecastRMS</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Catania (Italia)</span>
+                            <ul class="experience-details">
+                                <li>Sviluppo di connessioni e integrazioni per lo scambio dati con il sistema RMS MyForecast.</li>
+                                <li>Integrazione con sistemi e servizi di terze parti per sincronizzazione dati.</li>
+                                <li>Sviluppo di widget grafici interattivi per la visualizzazione e l'analisi dei dati di previsione.</li>
+                                <li>Sviluppo full-stack di funzionalità applicative end-to-end.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Senior Software Developer</h3>
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2018 - 2020</span>
+                            </div>
+                            <span class="timeline-company"><i class="fas fa-building"></i> HOTA S.r.l.</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Messina (Italia)</span>
+                            <ul class="experience-details">
+                                <li>Sviluppo di un Property Management System (PMS) per la gestione di strutture alberghiere, disponibilità, prezzi, regole e clienti.</li>
+                                <li>Sviluppo di una piattaforma BedBank per Tour Operator, finalizzata alla sincronizzazione di disponibilità, restrizioni e prezzi.</li>
+                                <li>Sviluppo di un motore di ricerca ad alte prestazioni per la gestione delle prenotazioni immediate.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Full-Stack Developer</h3>
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2014 - 2018</span>
+                            </div>
+                            <span class="timeline-company"><i class="fas fa-building"></i> I.B.S. (Italian Booking Service)</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Messina (Italia)</span>
+                            <ul class="experience-details">
+                                <li>Progettazione e sviluppo di siti web e applicazioni Windows per la vendita di servizi tramite interfacce web.</li>
+                                <li>Sviluppo di sistemi per la sincronizzazione e lo scambio di informazioni relative a strutture alberghiere e autonoleggio.</li>
+                                <li>Coordinamento del team di sviluppatori e supervisione delle attività progettuali.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Analista Programmatore</h3>
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2012 - 2013</span>
+                            </div>
+                            <span class="timeline-company"><i class="fas fa-building"></i> SysData</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Bologna (Italia)</span>
+                            <ul class="experience-details">
+                                <li>Manutenzione e sviluppo di applicativi in ambiente .NET.</li>
+                                <li>Sviluppo di un sistema per la raccolta dei dati di lettura dei contatori tramite Bluetooth.</li>
+                                <li>Manutenzione di un sistema per la visualizzazione di contenuti su PC remoti collegati a display informativi.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Software Developer</h3>
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2010 - 2012</span>
+                            </div>
+                            <span class="timeline-company"><i class="fas fa-building"></i> TFS / SCAI</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Torino / Bologna (Italia)</span>
+                            <ul class="experience-details">
+                                <li>Sviluppo di applicazioni Windows e Web in C# e VB.NET (ASP.NET, MVC, Silverlight, WPF).</li>
+                                <li>Sviluppo frontend con HTML5, JavaScript e CSS.</li>
+                                <li>Progettazione e gestione di database tramite SQL Server 2005/2008.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
+
+            <!-- Certificazioni & Formazione Grid -->
+            <div class="two-column-section">
+                <!-- Certificazioni -->
+                <section class="info-card-section">
+                    <h2><i class="fas fa-certificate"></i> Certificazioni</h2>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <h4>Microsoft Full-Stack Developer</h4>
+                                <span class="badge-date">Dicembre 2025</span>
+                            </div>
+                            <p class="issuer">Coursera</p>
+                            <p class="skills-highlight"><strong>Skills:</strong> .NET Core, Blazor, EF Core, Web API</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <h4>Google Project Management</h4>
+                                <span class="badge-date">Ottobre 2022</span>
+                            </div>
+                            <p class="issuer">Coursera</p>
+                            <p class="skills-highlight"><strong>Skills:</strong> Agile project management</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Istruzione -->
+                <section class="info-card-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Istruzione e Formazione</h2>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <h4>Attestato Programmazione e Web</h4>
+                                <span class="badge-date">2009</span>
+                            </div>
+                            <p class="issuer">Forte Chance - Piemonte</p>
+                            <p class="details-text">Programmazione VB.NET con Visual Studio, CSS, HTML e standard web.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <h4>Tecnico Superiore Sistemi e Tecnologie Informatiche</h4>
+                                <span class="badge-date">2007 - 2008</span>
+                            </div>
+                            <p class="issuer">Corso I.F.T.S. Europeo</p>
+                            <p class="details-text">Ambito sistemistico, reti di computer, IOS Cisco, ECDL.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <h4>Perito Informatico</h4>
+                                <span class="badge-date">2002 - 2007</span>
+                            </div>
+                            <p class="issuer">I.T.I.S. Verona Trento</p>
+                            <p class="details-text">Formazione specifica sulla programmazione ad oggetti.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
-    </div>
 
-    <!-- Fix GSAP missing library bug -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="script.js"></script>
+        <footer class="footer">
+            <p>© 2026 Francesco Carbone · Senior Software Developer .NET</p>
+        </footer>
+    </div>
 </body>
 
 </html>
